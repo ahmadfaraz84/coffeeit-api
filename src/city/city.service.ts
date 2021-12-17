@@ -116,7 +116,6 @@ export class CityService {
       name,
       isExist,
     );
-    console.log(data.status == HttpStatus.NOT_FOUND);
     if (data.status == HttpStatus.NOT_FOUND) {
       throw new HttpException(
         { success: false, error: 'No city found with this name' },

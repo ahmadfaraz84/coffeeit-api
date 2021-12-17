@@ -1,0 +1,15 @@
+version: "3"
+services:
+  coffeeitapi:
+    container_name: coffeeit-api
+    image: coffeeit-api
+    build:
+      context: ./
+      dockerfile: Dockerfile
+    restart: always
+    ports:
+     - "3000:3000"
+    environment:
+      - JOB_INTERVAL="0 0-23/1 * * *"
+      - OpenApiKey= a4745188bf89e46931f106c64013ed22
+      - mongodbConnectionString = "mongodb+srv://ahmad:ahmad@cluster0.ubyn0.mongodb.net/coffeeitAPI?retryWrites=true&w=majority"
